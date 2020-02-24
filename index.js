@@ -27,16 +27,16 @@ function edwardDecrypt(message) {
 }
 
 function isValid(text) {
-	let regexp = /^[a-z]+$/g;
+	const regexp = /^[a-z]+$/g;
 	if (text.length > 100000) {
 		alert('Edward! The maximum number of letters is 100000!');
 		return false;
 	} else if (text.length == '0') {
 		alert('Edward! String is empty!')
 		return false;
-	} else if (regexp.test(text)) {
-		return true;
+	} else if (!regexp.test(text)) {
+		alert('Edward! Unacceptable symbols!');
+		return false;
 	}
-	alert('Edward! Unacceptable symbols!');
-	return false;
+	return true;
 }
